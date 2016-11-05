@@ -1,3 +1,4 @@
+# coding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -13,13 +14,17 @@ end
 unless Category.find_by_title("School")
   Category.create(
     "title"=>"School",
-    "challenges"=>"I failed a test\r\nI'm failing a class\r\nI'm late to my classes\r\nI don't get along with people at school",
+    "challenges"=>
+    ":writing_hand: I failed a test\r\n:confused: I'm failing a class\r\n:disappointed_relieved: I'm late to my classes\r\n:persevere: I don't get along with people at school",
     "thinking"=>
-    "I'm not good in this subject\r\nI'm not good at school work\r\nThere is too much pressure\r\nIt's just too hard\r\nI'm a failure\r\nI don't have what it takes to succeed\r\nNo one can help me",
-    "feelings"=>"Angry\r\nWorried\r\nAnxious\r\nNervous\r\nSad\r\nScared\r\nMad\r\nOkay\r\nContent",
-    "concerns"=>"I'll fail a class\r\nI'll cheat on a test\r\nI won't graduate\r\nI'll skip school\r\nI'll do a bad job",
-    "positive_thoughts"=>"I have the talents and abilities to succeed\r\nI will work hard and improve\r\nI see myself reaching my goals",
+    ":pensive: I’m not good in this subject\r\n:slight_frown: I’m not good at school work\r\n:weary: There is too much pressure\r\n:weary: It's just too hard\r\n:disappointed: I'm a failure\r\n:confounded: I don't have what it takes to succeed\r\n:sweat: No one can help me",
+    "feelings"=>
+    ":rage: Angry\r\n:worried: Worried\r\n:sweat: Anxious\r\n:disappointed_relieved: Nervous\r\n:disappointed: Sad\r\n:fearful: Scared\r\n:angry: Mad\r\n:slight_smile: Okay\r\n:upside_down: Content",
+    "concerns"=>
+    ":thumbsdown: I’ll fail a class\r\n:fingers_crossed: I'll cheat on a test\r\n:mortar_board: I won't graduate\r\n:writing_hand: I'll skip school\r\n:frowning2: I'll do a bad job",
+    "positive_thoughts"=>
+    ":nerd: I have the talents and abilities to succeed\r\n:smile: I will work hard and improve\r\n:sunglasses: I see myself reaching my goals",
     "positive_behaviors"=>
-    "Ask for help from an adult\r\nMake a plan\r\nSay I'm sorry\r\nStop behaviors that keep you from succeeding\r\nPractice positive self-talk",
+    ":handshake: Ask for help from an adult\r\n:thumbsup: Make a plan # (to study, to prepare, to fix something)\r\n:hugging: Say I'm sorry\r\n:raised_hand: Stop behaviors that keep you from succeeding\r\n:grin: Practice positive self-talk",
   )
 end
