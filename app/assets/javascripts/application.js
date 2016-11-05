@@ -15,3 +15,14 @@
 //= require turbolinks
 //= require_tree .
 //= require material
+
+emojione.imageType = 'svg';
+emojione.imagePathSVG = '/emojione/assets/svg/';
+
+document.addEventListener("turbolinks:load", function() {
+  $(".js-emojione").each(function() {
+    var $this = $(this);
+    var replacementHtml = emojione.toImage($this.text())
+    $this.html(replacementHtml)
+  });
+});
