@@ -1,8 +1,15 @@
 @import 'about';
 @import 'activities';
 
+.js-emojione .emojione {
+  max-width:100%;
+  max-height:100%;
+  width: 100%;
+  height: auto;
+}
+
 // Override Material variables BEFORE importing the stylesheet
 // Note: colors must be defined with RGB values, not hex
 //$layout-header-bg-color: rgb(128,128,128) !default;
 
-@import "material";
+@import 'material';
