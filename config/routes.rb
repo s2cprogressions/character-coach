@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :activities, only: :index
 
+  get 'app_entry_point', to: 'home#app_entry_point'
   get 'challenges', to: 'home#challenges'
   get 'complete', to: 'home#complete'
   get 'concerns', to: 'home#concerns'

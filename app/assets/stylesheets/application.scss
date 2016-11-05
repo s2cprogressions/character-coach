@@ -8,6 +8,11 @@
   height: auto;
 }
 
+.mobile-app #app-header {
+  display: none;
+
+}
+
 // Override Material variables BEFORE importing the stylesheet
 // Note: colors must be defined with RGB values, not hex
 $color-primary: "255, 0, 0";
