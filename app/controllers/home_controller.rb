@@ -93,10 +93,10 @@ class HomeController < ApplicationController
   end
 
   def positive_thought
-    activity.successful_thinking[session[:positive_thought]]
+    activity.positive_thoughts[session[:positive_thought]]
   end
 
   def positive_behavior
-    activity.successful_behaviors[session[:positive_behavior]]
+    activity.positive_behaviors[session[:positive_behavior]]
   end
 end

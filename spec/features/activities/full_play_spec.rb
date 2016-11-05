@@ -65,11 +65,11 @@ RSpec.feature "Playing through an activity", :js, type: :feature do
 
     expect(page).to have_content "Instead of thinking that #{thought}, I will choose to believe that"
 
-    activity.successful_thinking.each do |successful_thought|
-      expect(page).to have_link successful_thought
+    activity.positive_thoughts.each do |positive_thought|
+      expect(page).to have_link positive_thought
     end
 
-    positive_thought = activity.successful_thinking.sample
+    positive_thought = activity.positive_thoughts.sample
 
     click_link positive_thought
 
@@ -79,11 +79,11 @@ RSpec.feature "Playing through an activity", :js, type: :feature do
 
     expect(page).to have_content "Instead of planning to #{concern}, I have the ability to"
 
-    activity.successful_behaviors.each do |successful_behavior|
-      expect(page).to have_link successful_behavior
+    activity.positive_behaviors.each do |positive_behavior|
+      expect(page).to have_link positive_behavior
     end
 
-    positive_behavior = activity.successful_behaviors.sample
+    positive_behavior = activity.positive_behaviors.sample
 
     click_link positive_behavior
 
