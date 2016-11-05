@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  resources :activities, only: :index
+
   get 'challenges', to: 'home#challenges'
   get 'complete', to: 'home#complete'
   get 'concerns', to: 'home#concerns'
