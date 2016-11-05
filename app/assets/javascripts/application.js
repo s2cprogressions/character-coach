@@ -29,7 +29,8 @@ document.addEventListener("turbolinks:load", function() {
 });
 
 function getNavigationBarColor() {
-  return "64,84,178" // TODO: make dynamic
+  var colorString = getComputedStyle(document.getElementsByTagName("header")[0]).backgroundColor
+  return colorString.replace(/[\srgb()]/g, ""); // rgb(1,2,3) -> 1,2,3
 }
 
 function hideNavigationBarForMobile() {
