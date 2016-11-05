@@ -1,8 +1,8 @@
 class Activity
   include ActiveModel::Model
 
-  attr_accessor :id, :title, :challenges, :thinking, :feelings, :concerns,
-                :successful_thinking, :successful_behaviors, :about
+  attr_accessor :id, :title, :challenges, :thoughts, :feelings, :concerns,
+                :positive_thoughts, :positive_behaviors
 
   def self.repository
     YAML.load_file(Rails.root.join("config", "model.yml"))

@@ -9,7 +9,7 @@ globals:
     - Mad
     - Okay
     - Content
-  thinking:
+  thoughts:
     - It's just too hard
     - I'm a failure
     - I don't have what it takes to succeed
@@ -17,11 +17,11 @@ globals:
   concerns:
     - I'll skip school
     - I'll do a bad job
-  successful_thinking:
+  positive_thoughts:
     - I have the talents and abilities to succeed
     - I will work hard and improve
     - I see myself reaching my goals
-  successful_behaviors:
+  positive_behaviors:
     - Ask for help from an adult
     - Make a plan # (to study, to prepare, to fix something)
     - Say I'm sorry
@@ -35,7 +35,7 @@ categories:
       - I'm failing a class
       - I'm late to my classes
       - I don't get along with people at school
-    thinking:
+    thoughts:
       - I'm not good in this subject
       - I'm not good at school work
       - There is too much pressure
@@ -44,8 +44,8 @@ categories:
       - I'll fail a class
       - I'll cheat on a test
       - I won't graduate
-    successful_thinking: []
-    successful_behaviors: []
+    positive_thoughts: []
+    positive_behaviors: []
   trouble:
     title: Trouble
     challenges:
@@ -53,7 +53,7 @@ categories:
       - I got suspended
       - I talked back to my parents
       - I got sent to the office
-    thinking:
+    thoughts:
       - I don't get along with someone important to me
       - I don't want to get along with someone
       - I can't stop saying things I don't mean
@@ -63,20 +63,20 @@ categories:
       - I'll yell at someone important to me
       - I'll lose my friend
       - I'll cheat on a test
-    successful_thinking: []
-    successful_behaviors: []
+    positive_thoughts: []
+    positive_behaviors: []
   attitude:
     title: Attitude
     challenges:
       - I have a bad attitude
       - I cannot control my emotions
       - I'm letting things bring me down
-    thinking:
+    thoughts:
       - I just don't want to do anything
     feelings: []
     concerns:
       - I'll yell at someone important to me
       - I'll lose my friend
       - I'll hurt someone I care about
-    successful_thinking: []
-    successful_behaviors: []
+    positive_thoughts: []
+    positive_behaviors: []

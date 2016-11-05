@@ -21,3 +21,22 @@
 
 en:
   hello: "Hello world"
+
+  title:
+    default: "Progressions"
+    home:
+      index: "Character Coach"
+      about: "About"
+      challenges: "Challenges"
+      complete: "Complete"
+      concerns: "Concerns"
+      feelings: "Feelings"
+      let_me_help: "Let me help"
+      not_alone: "You're not alone"
+      positive_behaviors: "New Behavior"
+      positive_emotions: "Positive Feelings"
+      positive_thoughts: "Positive Thoughts"
+      success_plan: "Success Plan"
+      summary: "Summary"
+      thanks: "Thank you!"
+      thoughts: "Thoughts"

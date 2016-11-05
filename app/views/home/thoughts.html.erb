@@ -1,0 +1,6 @@
+<h3>I'm thinking that</h3>
+<ul class="thoughts">
+  <% activity.thoughts.each_with_index do |thought, index| %>
+  <li><%= link_to thought, feelings_path(thought: index), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
+  <% end %>
+</ul>

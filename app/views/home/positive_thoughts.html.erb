@@ -1,0 +1,7 @@
+<h3>Instead of thinking that <%= thought %>, I will choose to believe that</h3>
+
+<ul class="positive_thinking">
+  <% activity.positive_thoughts.each_with_index do |positive_thought, index| %>
+  <li><%= link_to positive_thought, positive_emotions_path(positive_thought: index), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
+  <% end %>
+</ul>
