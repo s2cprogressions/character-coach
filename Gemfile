@@ -54,6 +54,8 @@ end
 
 group :test do
   gem "fuubar"
+  gem "database_cleaner"
+  gem "poltergeist"
 end
 
 group :development do
