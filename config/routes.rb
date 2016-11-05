@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   get 'summary', to: 'home#summary'
   get 'thanks', to: 'home#thanks'
   get 'thoughts', to: 'home#thoughts'
+  get 'about', to: 'home#about'
 
 end

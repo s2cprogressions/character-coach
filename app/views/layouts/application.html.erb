@@ -6,9 +6,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Material Design Lite -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
+    <!-- EmojiOne -->
+    <script src="https://cdn.jsdelivr.net/emojione/2.2.6/lib/js/emojione.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.6/assets/css/emojione.min.css"/>
   </head>
 
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
@@ -21,22 +27,24 @@
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" href="">Home</a>
-            <a class="mdl-navigation__link" href="">About</a>
-            <a class="mdl-navigation__link" href="">Help</a>
+            <%= link_to "Home", "/", :class=>"mdl-navigation__link" %>
+            <%= link_to "About", "about", :class=>"mdl-navigation__link" %>
+            <%= link_to "Help", "help", :class=>"mdl-navigation__link" %>
           </nav>
         </div>
       </header>
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Character Coach</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Home</a>
-          <a class="mdl-navigation__link" href="">About</a>
-          <a class="mdl-navigation__link" href="">Help</a>
+          <%= link_to "Home", "/", :class=>"mdl-navigation__link" %>
+          <%= link_to "About", "about", :class=>"mdl-navigation__link" %>
+          <%= link_to "Help", "help", :class=>"mdl-navigation__link" %>
         </nav>
       </div>
       <main class="mdl-layout__content">
-        <%= yield %>
+        <div class="mdl-grid portfolio-max-width">
+          <%= yield %>
+        </div>
       </main>
     </div>
   </body>
