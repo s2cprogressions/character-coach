@@ -22,7 +22,7 @@ emojione.imagePathSVG = '/emojione/assets/svg/';
 document.addEventListener("turbolinks:load", function() {
   $(".js-emojione").each(function() {
     var $this = $(this);
-    var replacementHtml = emojione.toImage($this.text())
+    var replacementHtml = emojione.toImage($this.html())
     $this.html(replacementHtml)
   });
 });
