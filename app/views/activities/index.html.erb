@@ -1,15 +1,15 @@
-<div class="mdl-grid portfolio-max-width">
+<div class="mdl-grid activity">
   <% activities.each do |activity| %>
     <% activity.challenges.each_with_index do |challenge, index| %>
-      <div id="activity_<%= activity.id %>_challenge_<%= index %>" class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
-        <div class="mdl-card__media">
-          <%= image_tag "http://placehold.it/250x190", class: "article-image", border: 0, alt: "#{activity.title}: #{challenge}" %>
+      <div id="activity_<%= activity.id %>_challenge_<%= index %>" class="mdl-grid mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
+        <div class="mdl-card__media mdl-cell mdl-cell--12-col-tablet js-emojione">
+          :smile:
         </div>
-        <div class="mdl-card__title">
+        <div class="mdl-cell mdl-cell--8-col">
           <h2 class="mdl-card__title-text"><%= challenge %></h2>
-        </div>
-        <div class="mdl-card__supporting-text">
-          TODO: Challenge description
+          <div class="mdl-card__supporting-text no-left-padding">
+            TODO: Challenge description
+          </div>
         </div>
         <div class="mdl-card__actions mdl-card--border">
           <%= link_to "Start", not_alone_path(activity: activity.id, challenge: index),

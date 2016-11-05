@@ -15,3 +15,7 @@ $color-primary: "255, 0, 0";
 //$color-accent: $palette-orange-A200;
 
 @import "material";
+
+img {
+  max-width: 100%;
+}
