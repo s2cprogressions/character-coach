@@ -1,21 +1,23 @@
-<div class="mdl-grid activity">
-  <% activities.each do |activity| %>
-    <% activity.challenges_titles.each_with_index do |challenge, index| %>
-      <div id="activity_<%= activity.id %>_challenge_<%= index %>" class="mdl-grid mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
-        <div class="mdl-card__media mdl-cell mdl-cell--12-col-tablet js-emojione">
-          <%= activity.challenges_emojis[index] %>
-        </div>
-        <div class="mdl-cell mdl-cell--8-col">
-          <h2 class="mdl-card__title-text"><%= challenge %></h2>
-          <div class="mdl-card__supporting-text no-left-padding">
-            TODO: Challenge description
-          </div>
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <%= link_to "Start", not_alone_path(category: activity.id, challenge: index),
-                      class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+<div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+<div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+  <div class="mdl-card__supporting-text">
+    <h4>About</h4>
+    Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.
+    <ul class="demo-list-icon mdl-list">
+      <% activities.each do |activity| %>
+        <% activity.challenges_titles.each_with_index do |challenge, index| %>
+          <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+              <div class="js-emojione" style="width: 18px;">
+                <%= activity.challenges_emojis[index] %>
+              </div>
+              <%= challenge %>
+            </span>
+            <%= link_to "Start", not_alone_path(category: activity.id, challenge: index),
+                        class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 </div>
