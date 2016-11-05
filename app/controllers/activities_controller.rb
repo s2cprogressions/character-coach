@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
   def index
-    render locals: { activities: Activity.activities }
+    render locals: { activities: Category.all }
   end
 end
