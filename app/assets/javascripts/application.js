@@ -16,6 +16,7 @@
 //= require_tree .
 //= require material
 
+
 emojione.imageType = 'svg';
 emojione.imagePathSVG = '/emojione/assets/svg/';
 
@@ -26,3 +27,12 @@ document.addEventListener("turbolinks:load", function() {
     $this.html(replacementHtml)
   });
 });
+
+function getNavigationBarColor() {
+  var colorString = getComputedStyle(document.getElementsByTagName("header")[0]).backgroundColor
+  return colorString.replace(/[\srgb()]/g, ""); // rgb(1,2,3) -> 1,2,3
+}
+
+function hideNavigationBarForMobile() {
+  // TODO: implement?
+}
