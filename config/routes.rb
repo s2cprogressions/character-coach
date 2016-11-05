@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  resources :activities, only: :index
+
   get 'challenges', to: 'home#challenges'
   get 'complete', to: 'home#complete'
   get 'concerns', to: 'home#concerns'
@@ -18,5 +20,6 @@ Rails.application.routes.draw do
   get 'summary', to: 'home#summary'
   get 'thanks', to: 'home#thanks'
   get 'thoughts', to: 'home#thoughts'
+  get 'about', to: 'home#about'
 
 end

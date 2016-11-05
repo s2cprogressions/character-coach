@@ -19,6 +19,16 @@ RSpec.describe Activity, type: :model do
       global_feelings = %w(Angry Worried Anxious Nervous Sad Scared Mad Okay Content)
       expect(activities.map(&:feelings)).to contain_exactly global_feelings, global_feelings, global_feelings
     end
+
+    it "merges default elements with existing elements" do
+      expect(Activity.activity(:school).concerns).to eq [
+        "I'll fail a class",
+        "I'll cheat on a test",
+        "I won't graduate",
+        "I'll skip school",
+        "I'll do a bad job",
+      ]
+    end
   end
 
   describe ".activity" do

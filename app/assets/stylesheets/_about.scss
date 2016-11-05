@@ -1,0 +1,12 @@
+.mdl-demo .mdl-layout__content section:not(:last-of-type) {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.mdl-demo section.section--center {
+  max-width: 860px;
+}
+
+.mdl-card {
+  min-width: 860px;
+}

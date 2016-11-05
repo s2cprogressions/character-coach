@@ -40,4 +40,9 @@ class HomeController < ApplicationController
 
   def complete
   end
+
+  def about
+  end
+
+
 end

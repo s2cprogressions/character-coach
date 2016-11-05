@@ -63,6 +63,7 @@ group :development do
   gem "web-console"
   gem "listen", "~> 3.0.5"
   gem "better_errors"
+  gem "binding_of_caller"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
