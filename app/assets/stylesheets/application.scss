@@ -1,3 +1,8 @@
 @import 'about';
 @import 'activities';
+
+// Override Material variables BEFORE importing the stylesheet
+// Note: colors must be defined with RGB values, not hex
+//$layout-header-bg-color: rgb(128,128,128) !default;
+
 @import "material";

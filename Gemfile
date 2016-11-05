@@ -24,7 +24,7 @@ gem "jbuilder", "~> 2.5"
 
 gem "devise"
 
-gem 'material_design_lite-rails', '~> 1.2'
+gem 'material_design_lite-sass'
 gem "inherited_resources", git: "https://github.com/activeadmin/inherited_resources"
 gem "activeadmin", git: "https://github.com/activeadmin/activeadmin"
 
