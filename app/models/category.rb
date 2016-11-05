@@ -10,11 +10,11 @@ class Category < ApplicationRecord
     positive_behaviors
   ).each do |col|
     define_method :"#{col}_titles" do
-      __send__(col).split("\n")
+      __send__(col).split("\n") #.map{ |line| line[/(?<=:\w+).*/] }
     end
 
     define_method :"#{col}_emojis" do
-      [":smile:"] * __send__(col).split("\n").size
+      __send__(col).split("\n").map{ |line| line[/^:\w+:/] }
     end
   end
 end
