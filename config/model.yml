@@ -45,6 +45,7 @@ categories:
       - I'll cheat on a test
       - I won't graduate
     successful_thinking: []
+    successful_behaviors: []
   trouble:
     title: Trouble
     challenges:
@@ -63,6 +64,7 @@ categories:
       - I'll lose my friend
       - I'll cheat on a test
     successful_thinking: []
+    successful_behaviors: []
   attitude:
     title: Attitude
     challenges:
@@ -77,3 +79,4 @@ categories:
       - I'll lose my friend
       - I'll hurt someone I care about
     successful_thinking: []
+    successful_behaviors: []
