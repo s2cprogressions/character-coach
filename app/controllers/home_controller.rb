@@ -81,7 +81,7 @@ class HomeController < ApplicationController
   end
 
   def thought
-    activity.thinking[session[:thought]]
+    activity.thoughts[session[:thought]]
   end
 
   def feeling

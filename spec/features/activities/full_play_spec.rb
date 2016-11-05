@@ -21,11 +21,11 @@ RSpec.feature "Playing through an activity", :js, type: :feature do
 
     expect(page).to have_content "I'm thinking that"
 
-    activity.thinking.each do |thought|
+    activity.thoughts.each do |thought|
       expect(page).to have_link thought
     end
 
-    thought = activity.thinking.last
+    thought = activity.thoughts.last
 
     click_link thought
 

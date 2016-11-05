@@ -9,7 +9,7 @@ globals:
     - Mad
     - Okay
     - Content
-  thinking:
+  thoughts:
     - It's just too hard
     - I'm a failure
     - I don't have what it takes to succeed
@@ -35,7 +35,7 @@ categories:
       - I'm failing a class
       - I'm late to my classes
       - I don't get along with people at school
-    thinking:
+    thoughts:
       - I'm not good in this subject
       - I'm not good at school work
       - There is too much pressure
@@ -53,7 +53,7 @@ categories:
       - I got suspended
       - I talked back to my parents
       - I got sent to the office
-    thinking:
+    thoughts:
       - I don't get along with someone important to me
       - I don't want to get along with someone
       - I can't stop saying things I don't mean
@@ -71,7 +71,7 @@ categories:
       - I have a bad attitude
       - I cannot control my emotions
       - I'm letting things bring me down
-    thinking:
+    thoughts:
       - I just don't want to do anything
     feelings: []
     concerns:
