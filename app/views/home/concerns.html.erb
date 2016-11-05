@@ -1,0 +1,7 @@
+<h3>I'm concerned I might</h3>
+
+<ul class="concerns">
+  <% activity.concerns.each_with_index do |concern, index| %>
+  <li><%= link_to concern, thanks_path(concern: index), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
+  <% end %>
+</ul>

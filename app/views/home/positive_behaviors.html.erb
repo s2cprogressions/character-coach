@@ -1,0 +1,7 @@
+<h3>Instead of planning to <%= concern %>, I have the ability to</h3>
+
+<ul class="positive_behaviors">
+  <% activity.successful_behaviors.each_with_index do |positive_behavior, index| %>
+  <li><%= link_to positive_behavior, success_plan_path(positive_behavior: index), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
+  <% end %>
+</ul>

@@ -12,7 +12,8 @@
           TODO: Challenge description
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <%= link_to "Start", activities_path, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
+          <%= link_to "Start", not_alone_path(activity: activity.id, challenge: index),
+                      class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
         </div>
       </div>
     <% end %>
