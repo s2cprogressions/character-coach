@@ -1,37 +1,15 @@
-<!--<div class="mdl-cell mdl-cell&#45;&#45;2-col mdl-cell&#45;&#45;hide-tablet mdl-cell&#45;&#45;hide-phone"></div>-->
-  <!--<div class="demo-content mdl-color&#45;&#45;white mdl-shadow&#45;&#45;4dp content mdl-color-text&#45;&#45;grey-800 mdl-cell mdl-cell&#45;&#45;8-col">-->
-    <!--<div class="mdl-card__supporting-text">-->
-      <!--<h4>You're not alone</h4>-->
-      <!--We can help-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-<style>
-  .demo-card-square.mdl-card {
-    width: 500px;
-    height: 320px;
-  }
-  .demo-card-square > .mdl-card__title {
-    color: #fff;
-    background:
-        url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
-  }
-  .emojione {
-    width: 320px;
-    height: 320px;
-  }
-</style>
-
-<div class="mdl-grid">
-  <div class="demo-card-square mdl-card mdl-shadow--2dp not-alone">
-    <h2 class="mdl-cell mdl-cell--12-col mdl-typography--headline">You're not alone</h2>
-    <div class="mdl-cell mdl-cell--5-col mdl-card__supporting-text no-padding">
+<div id="not-alone" class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+  <div class="mdl-card__supporting-text">
+    <h4>You're not alone</h4>
       <p>
         We can help with that
       </p>
-    </div>
-    <%= link_to "Find out how", thoughts_activity_path,
+      <div class="js-emojione">
+        :smiley:
+      </div>
+      <%= link_to "Find out how", thoughts_activity_path,
                 class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent",
                 :id => "activitiesSubmit" %>
+    </div>
   </div>
 </div>
