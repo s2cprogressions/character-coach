@@ -1,16 +1,18 @@
-<h1>Character Coach</h1>
 
-<div class="logo">
-<%= image_tag "strong-character.png", alt: "Character Coach Logo" %>
-</div>
-
-<div class="mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-  <div class="mdl-card__supporting-text">
+<div id="help" class="content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+  <h3>Character Coach Help</h>
+  <div class="logo">
+    <%= image_tag "strong-character.png", alt: "Character Coach Logo" %>
+  </div>
+  <div id="help" class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col mdl-card__supporting-text">
     <%= markdown(emergency_contact) %>
   </div>
-</div>
 
-<h3>General Disclaimer</h3>
-<div class="disclaimer">
-  <%= markdown(general_disclaimer) %>
+
+  <h3>General Disclaimer</h3>
+  <div class="disclaimer">
+    <%= markdown(general_disclaimer) %>
+    <div class="mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+    </div>
+  </div>
 </div>
