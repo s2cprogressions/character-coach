@@ -11,14 +11,14 @@
 
 .mobile-app #app-header {
   display: none;
-
 }
 
 // Override Material variables BEFORE importing the stylesheet
 // Note: colors must be defined with RGB values, not hex
-$color-primary: "255, 0, 0";
+$color-primary: "97,	125,	136";
 //$color-primary-dark: $palette-blue-grey-700;
 //$color-accent: $palette-orange-A200;
+
 
 @import "material";
 
