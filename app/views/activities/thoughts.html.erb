@@ -1,9 +1,10 @@
-<h3>I'm thinking that</h3>
-<ul class="thoughts">
-  <% category.thoughts.each do |thought| %>
-    <li>
-      <div class="js-emojione">:<%= thought.icon %>:</div>
-      <%= link_to thought.text, feelings_activity_path(thought: thought.id), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
-    </li>
-  <% end %>
-</ul>
+<div id="challenges" class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+  <div class="mdl-card__supporting-text">
+    <h4>I'm thinking that</h4>
+    <ul class="thoughts">
+      <% category.thoughts.each do |thought| %>
+        <%= render partial: 'emoji_list_item', locals: {entry: thought, type: 'thought', link_url: feelings_activity_path(thought: thought.id)} %>
+      <% end %>
+    </ul>
+  </div>
+</div>
