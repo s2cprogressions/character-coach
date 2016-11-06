@@ -37,10 +37,6 @@ function hideNavigationBarForMobile() {
   // TODO: implement?
 }
 
-$('#activitiesSubmit').click(function (event) {
-  alert('Hooray!');
-});
-
 $.fn.extend({
   animateCss: function (animationName) {
     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';

@@ -16,6 +16,8 @@
 // Override Material variables BEFORE importing the stylesheet
 // Note: colors must be defined with RGB values, not hex
 $color-primary: "97,	125,	136";
+$color-accent: "231, 112, 126";
+$text-color-primary: #2c2c2c;
 //$color-primary-dark: $palette-blue-grey-700;
 //$color-accent: $palette-orange-A200;
 
@@ -24,4 +26,22 @@ $color-primary: "97,	125,	136";
 
 img {
   max-width: 100%;
+}
+
+a.animated-link {
+  color: white;
+  background-color: #CEC5C5;
+  text-decoration: none;
+  padding: 10px;
+
+  &.selected {
+    background-color: #E7707e;
+  }
+
+}
+
+
+h4 {
+  font-weight: 700;
+
 }

@@ -2,12 +2,23 @@
 // All this logic will automatically be available in application.js.
 
 
+var animNumber = 0;
+var anims = [
+  'pulse',
+  'bounce',
+  'rubberBand'
+]
 
 document.addEventListener("turbolinks:load", function() {
   $(document.body).on('click', '.animated-link', function (event) {
     event.preventDefault();
     var $this = $(this);
-    $this.animateCss('bounce')
+    $this.addClass("selected");
+
+    anim = anims[animNumber];
+    animNumber = (animNumber + 1) % anims.length;
+
+    $this.animateCss(anim)
     setTimeout(function() {
       Turbolinks.visit($this.attr('href'));
     }, 1000)

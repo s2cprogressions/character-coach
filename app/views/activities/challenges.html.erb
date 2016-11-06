@@ -1,13 +1,11 @@
-<div id="challenges" class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-  <div class="mdl-card__supporting-text">
-    <h4>Activities</h4>
-    Choose a challenge below to begin
-    <ul class="demo-list-icon mdl-list">
-      <% activities.each do |activity| %>
-        <% activity.challenges.each do |challenge| %>
-          <%= render partial: 'emoji_list_item', locals: {activity: activity, entry: challenge, type: 'challenge', link_url: not_alone_activity_path(category: challenge.id, challenge: challenge.id)} %>
-        <% end %>
-      <% end %>
-    </ul>
-  </div>
+<div id="challenges" class="content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+  <h4>What's Your Challenge?</h4>
+
+  <p>Select the challenge below that best describes what you would like help with:</p>
+
+  <% activities.each do |activity| %>
+    <% activity.challenges.each do |challenge| %>
+      <%= render partial: 'emoji_list_item', locals: {activity: activity, entry: challenge, type: 'challenge', link_url: not_alone_activity_path(category: challenge.id, challenge: challenge.id)} %>
+    <% end %>
+  <% end %>
 </div>
