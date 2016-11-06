@@ -26,6 +26,7 @@ en:
     default: "Progressions"
     home:
       index: "Character Coach"
+    activities:
       about: "About"
       challenges: "Challenges"
       complete: "Complete"
