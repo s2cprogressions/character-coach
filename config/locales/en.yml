@@ -26,6 +26,9 @@ en:
     default: "Progressions"
     home:
       index: "Character Coach"
+      help: "Help"
+      about: "About"
+      keys_to_success: "Keys To Success"
     activities:
       about: "About"
       challenges: "Challenges"

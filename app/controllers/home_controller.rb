@@ -12,4 +12,7 @@ class HomeController < ApplicationController
 
   def help
   end
+
+  def keys_to_success
+  end
 end
