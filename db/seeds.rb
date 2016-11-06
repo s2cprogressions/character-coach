@@ -42,7 +42,7 @@ unless Category.find_by(title: "School")
         text: "I’m not good at school work",
       },
       {
-        icon: "weary",
+        icon: "disappointed_relieved",
         text: "There is too much pressure",
       },
       {
