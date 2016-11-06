@@ -1,18 +1,18 @@
 <div id="challenges" class="content mdl-color-text--grey-800 mdl-cell mdl-cell--2-col"></div>
-<div id="challenges" class="content mdl-color-text--grey-800 mdl-cell mdl-cell--4-col">
+<div id="summary" class="content mdl-color-text--grey-800 mdl-cell mdl-cell--4-col">
 
-  <h4>You said:</h4>
+  <h3><b>You Said</b></h3>
 
-  <div class="challenge"><%= challenge.text %></div>
+  <div id="summary_user_input" class="challenge"><%= challenge.text %></div>
 
-  <h5 class="big-margin">Your concern is:</h5>
-  <div class="concern"><%= concern.text %></div>
+  <h5 class="big-margin">Your Concern Is</h5>
+  <div id="summary_user_input" class="concern"><%= concern.text %></div>
 
-  <h5 class="big-margin">This makes you think:</h5>
-  <div class="thought"><%= thought.text %></div>
+  <h5 class="big-margin">This Makes You Think</h5>
+  <div id="summary_user_input" class="thought"><%= thought.text %></div>
 
-  <h5 class="big-margin">And you feel:</h5>
-  <div class="feeling"><%= feeling.text %></div>
+  <h5 class="big-margin">And You Feel:</h5>
+  <div id="summary_user_input" class="feeling"><%= feeling.text %></div>
 
   <%= link_to "Next", let_me_help_activity_path, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
 </div>
