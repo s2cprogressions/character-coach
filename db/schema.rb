@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105223501) do
+ActiveRecord::Schema.define(version: 20161106021030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,14 +31,18 @@ ActiveRecord::Schema.define(version: 20161105223501) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "title"
-    t.text     "challenges"
-    t.text     "thinking"
-    t.text     "feelings"
-    t.text     "concerns"
-    t.text     "positive_thoughts"
-    t.text     "positive_behaviors"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_options", force: :cascade do |t|
+    t.string  "text"
+    t.string  "description"
+    t.string  "type"
+    t.string  "icon"
+    t.integer "index"
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_category_options_on_category_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,4 +62,5 @@ ActiveRecord::Schema.define(version: 20161105223501) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "category_options", "categories"
 end
