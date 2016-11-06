@@ -1,5 +1,5 @@
 <div id="challenges" class="content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-  <h4>I'm concerned I might</h4>
+  <h4>I'm concerned</h4>
   <div class="concerns">
     <% category.concerns.each do |concern| %>
         <%= render partial: 'emoji_list_item', locals: {entry: concern, type: 'concern', link_url: thanks_activity_path(concern: concern.id)} %>
