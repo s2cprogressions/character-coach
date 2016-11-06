@@ -2,3 +2,13 @@
   position: relative;
   margin-bottom: 48px;
 }
+
+.not-alone {
+  min-width: 250px;
+
+  .mdl-cell {
+    .js-emojione {
+      width: 25px;
+    }
+  }
+}
