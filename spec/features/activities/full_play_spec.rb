@@ -4,7 +4,7 @@ RSpec.feature "Playing through an activity", :js, type: :feature do
   scenario "User can choose from list of challenges" do
     load(Rails.root + "db/seeds.rb")
 
-    visit activities_path
+    visit challenges_activity_path
 
     CategoryOption.challenges.each do |challenge|
       expect(page).to have_content challenge.text
@@ -17,9 +17,9 @@ RSpec.feature "Playing through an activity", :js, type: :feature do
       click_link "Start"
     end
 
-    expect(page).to have_content "You're not alone."
+    expect(page).to have_content "You're not alone"
 
-    click_link "Next"
+    click_link "Find out how"
 
     expect(page).to have_content "I'm thinking that"
 
@@ -54,7 +54,6 @@ RSpec.feature "Playing through an activity", :js, type: :feature do
 
     click_link "Next"
 
-    puts page.current_path
     expect(page).to have_content challenge.text
     expect(page).to have_content thought.text
     expect(page).to have_content feeling.text

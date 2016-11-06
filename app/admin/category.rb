@@ -1,11 +1,11 @@
 ActiveAdmin.register Category do
   permit_params :title,
-                challenges_attributes: [:icon, :text, :description],
-                thoughts_attributes: [:icon, :text, :description],
-                feelings_attributes: [:icon, :text, :description],
-                concerns_attributes: [:icon, :text, :description],
-                positive_thoughts_attributes: [:icon, :text, :description],
-                positive_behaviors_attributes: [:icon, :text, :description]
+                challenges_attributes: [:id, :icon, :text, :description, :_delete],
+                thoughts_attributes: [:id, :icon, :text, :description, :_delete],
+                feelings_attributes: [:id, :icon, :text, :description, :_delete],
+                concerns_attributes: [:id, :icon, :text, :description, :_delete],
+                positive_thoughts_attributes: [:id, :icon, :text, :description, :_delete],
+                positive_behaviors_attributes: [:id, :icon, :text, :description, :_delete]
 
   form do |f|
     f.inputs "Details" do

@@ -4,7 +4,7 @@
   <% category.positive_thoughts.each do |positive_thought| %>
     <li>
       <div class="js-emojione">:<%= positive_thought.icon %>:</div>
-      <%= link_to positive_thought.text, positive_emotions_path(positive_thought: positive_thought.id), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
+      <%= link_to positive_thought.text, positive_emotions_activity_path(positive_thought: positive_thought.id), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
     </li>
   <% end %>
 </ul>

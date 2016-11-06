@@ -6,21 +6,22 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  resources :activities, only: :index
+  resource :activity, only: :index do
+    get :challenges
+    get :not_alone
+    get :thoughts
+    get :feelings
+    get :concerns
+    get :thanks
+    get :summary
+    get :let_me_help
+    get :positive_thoughts
+    get :positive_emotions
+    get :positive_behaviors
+    get :success_plan
+    get :complete
+  end
 
   get "app_entry_point", to: "home#app_entry_point"
-  get "challenges", to: "home#challenges"
-  get "complete", to: "home#complete"
-  get "concerns", to: "home#concerns"
-  get "feelings", to: "home#feelings"
-  get "let_me_help", to: "home#let_me_help"
-  get "not_alone", to: "home#not_alone"
-  get "positive_behaviors", to: "home#positive_behaviors"
-  get "positive_emotions", to: "home#positive_emotions"
-  get "positive_thoughts", to: "home#positive_thoughts"
-  get "success_plan", to: "home#success_plan"
-  get "summary", to: "home#summary"
-  get "thanks", to: "home#thanks"
-  get "thoughts", to: "home#thoughts"
   get "about", to: "home#about"
 end
