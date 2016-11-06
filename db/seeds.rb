@@ -1,4 +1,5 @@
 # coding: utf-8
+# frozen_string_literal: true
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -7,9 +8,30 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create_with(
-  password: "sting-din-daydream",
-  password_confirmation: "sting-din-daydream"
+  password: Rails.env.development? ? "password" : "sting-din-daydream"
 ).find_or_create_by!(email: "admin@progressions.us")
+
+PageContent.create_with(
+  type: "text",
+  text: <<~TEXT
+    If you are in the U.S. and feel like you need to talk to someone right away, please call this national helpline:
+
+    1-800-273-8255
+
+    If you are not in the US and you feel like you need to talk to someone right away, please click on the link below for helplines in your area.
+
+    https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers
+  TEXT
+).find_or_create_by(key: "emergency_contact")
+
+PageContent.create_with(
+  type: "text",
+  text: <<~TEXT
+    This mobile application is intended to enable youth to make better decisions and think through their problems. Using the advice on this mobile application by no means guarantees change or the solving of problems.
+
+    The creators of this application will accept no responsibility for the users’ choices based off their use of this mobile application.
+  TEXT
+).find_or_create_by(key: "general_disclaimer")
 
 unless Category.find_by(title: "School")
   Category.create(

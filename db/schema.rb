@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106021030) do
+ActiveRecord::Schema.define(version: 20161106152540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 20161106021030) do
     t.integer "index"
     t.integer "category_id"
     t.index ["category_id"], name: "index_category_options_on_category_id", using: :btree
+  end
+
+  create_table "page_contents", force: :cascade do |t|
+    t.string   "text"
+    t.string   "type",       null: false
+    t.string   "key",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["key"], name: "index_page_contents_on_key", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

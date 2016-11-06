@@ -12,8 +12,8 @@ class HomeController < ApplicationController
 
   def help
     render locals: {
-      emergency_contact_number: "18885555555",
-      general_disclaimer: "Hi",
+      emergency_contact: PageContent.text(:emergency_contact).text,
+      general_disclaimer: PageContent.text(:general_disclaimer).text,
     }
   end
 

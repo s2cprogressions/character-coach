@@ -6,19 +6,11 @@
 
 <div class="mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
   <div class="mdl-card__supporting-text">
-    <h4>If you are in need of emergency assistance, please call:</h4>
-    <div class="emergency-contact-number">
-      <a href="tel:<%= emergency_contact_number %>" class="phone_number">
-        <%= number_to_phone emergency_contact_number, area_code: true %>
-      </a>
-    </div>
-    <div class="availability">
-      24/6/365 Crisis Call Center Hotline
-    </div>
+    <%= markdown(emergency_contact) %>
   </div>
 </div>
 
 <h3>General Disclaimer</h3>
 <div class="disclaimer">
-  <%= simple_format general_disclaimer %>
+  <%= markdown(general_disclaimer) %>
 </div>
