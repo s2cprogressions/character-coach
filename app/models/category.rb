@@ -17,11 +17,10 @@ class Category < ApplicationRecord
   private
 
   def generate_defaults
-    self.challenges = CategoryOption.new_defaults(:challenge, category: self)
-    self.thoughts = CategoryOption.new_defaults(:thought, category: self)
-    self.feelings = CategoryOption.new_defaults(:feeling, category: self)
-    self.concerns = CategoryOption.new_defaults(:concern, category: self)
-    self.positive_thoughts = CategoryOption.new_defaults(:positive_thought, category: self)
-    self.positive_behaviors = CategoryOption.new_defaults(:positive_behavior, category: self)
+    self.thoughts |= CategoryOption.new_defaults(:thought, category: self)
+    self.feelings |= CategoryOption.new_defaults(:feeling, category: self)
+    self.concerns |= CategoryOption.new_defaults(:concern, category: self)
+    self.positive_thoughts |= CategoryOption.new_defaults(:positive_thought, category: self)
+    self.positive_behaviors |= CategoryOption.new_defaults(:positive_behavior, category: self)
   end
 end

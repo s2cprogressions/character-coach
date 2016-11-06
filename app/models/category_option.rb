@@ -19,8 +19,8 @@ class CategoryOption < ApplicationRecord
   def self.new_defaults(type, options = {})
     model_data = YAML.load_file(Rails.root.join("config", "model.yml"))
     option_data = model_data.dig("globals", type.to_s.pluralize) || []
-    option_data.each_with_index.map do |option, index|
-      new(option.merge(type: type.to_s.singularize, index: index, **options))
+    option_data.each.map do |option|
+      new(option.merge(type: type.to_s.singularize, **options))
     end
   end
 end

@@ -67,60 +67,6 @@ unless Category.find_by(title: "School")
         icon: "disappointed_relieved",
         text: "There is too much pressure",
       },
-      {
-        icon: "weary",
-        text: "It's just too hard",
-      },
-      {
-        icon: "disappointed",
-        text: "I'm a failure",
-      },
-      {
-        icon: "confounded",
-        text: "I don't have what it takes to succeed",
-      },
-      {
-        icon: "sweat",
-        text: "No one can help me",
-      },
-    ],
-    feelings_attributes: [
-      {
-        icon: "rage",
-        text: "Angry",
-      },
-      {
-        icon: "worried",
-        text: "Worried",
-      },
-      {
-        icon: "sweat",
-        text: "Anxious",
-      },
-      {
-        icon: "disappointed_relieved",
-        text: "Nervous",
-      },
-      {
-        icon: "disappointed",
-        text: "Sad",
-      },
-      {
-        icon: "fearful",
-        text: "Scared",
-      },
-      {
-        icon: "angry",
-        text: "Mad",
-      },
-      {
-        icon: "slight_smile",
-        text: "Okay",
-      },
-      {
-        icon: "upside_down",
-        text: "Content",
-      },
     ],
     concerns_attributes: [
       {
@@ -135,51 +81,7 @@ unless Category.find_by(title: "School")
         icon: "mortar_board",
         text: "I won't graduate",
       },
-      {
-        icon: "writing_hand",
-        text: "I'll skip school",
-      },
-      {
-        icon: "frowning2",
-        text: "I'll do a bad job",
-      },
     ],
-    positive_thoughts_attributes: [
-      {
-        icon: "nerd",
-        text: "I have the talents and abilities to succeed",
-      },
-      {
-        icon: "smile",
-        text: "I will work hard and improve",
-      },
-      {
-        icon: "sunglasses",
-        text: "I see myself reaching my goals",
-      },
-    ],
-    positive_behaviors_attributes: [
-      {
-        icon: "handshake",
-        text: "Ask for help from an adult",
-      },
-      {
-        icon: "thumbsup",
-        text: "Make a plan # (to study, to prepare, to fix something)",
-      },
-      {
-        icon: "hugging",
-        text: "Say I'm sorry",
-      },
-      {
-        icon: "raised_hand",
-        text: "Stop behaviors that keep you from succeeding",
-      },
-      {
-        icon: "grin",
-        text: "Practice positive self-talk"
-      },
-    ]
   )
 end
 
@@ -217,60 +119,6 @@ unless Category.find_by(title: "Trouble")
         icon: "zipper_mouth",
         text: "I can't stop saying things I don't mean",
       },
-      {
-        icon: "weary",
-        text: "It's just too hard",
-      },
-      {
-        icon: "disappointed",
-        text: "I'm a failure",
-      },
-      {
-        icon: "confounded",
-        text: "I don't have what it takes to succeed",
-      },
-      {
-        icon: "sweat",
-        text: "No one can help me",
-      },
-    ],
-    feelings_attributes: [
-      {
-        icon: "rage",
-        text: "Angry",
-      },
-      {
-        icon: "worried",
-        text: "Worried",
-      },
-      {
-        icon: "sweat",
-        text: "Anxious",
-      },
-      {
-        icon: "disappointed_relieved",
-        text: "Nervous",
-      },
-      {
-        icon: "disappointed",
-        text: "Sad",
-      },
-      {
-        icon: "fearful",
-        text: "Scared",
-      },
-      {
-        icon: "angry",
-        text: "Mad",
-      },
-      {
-        icon: "slight_smile",
-        text: "Okay",
-      },
-      {
-        icon: "upside_down",
-        text: "Content",
-      },
     ],
     concerns_attributes: [
       {
@@ -286,54 +134,10 @@ unless Category.find_by(title: "Trouble")
         text: "I’ll lose my friend",
       },
       {
-        icon: "slight_frown",
-        text: "I'll cheat on a test",
-      },
-      {
-        icon: "writing_hand",
-        text: "I'll skip school",
-      },
-      {
         icon: "frowning2",
         text: "I'll do a bad job",
       },
     ],
-    positive_thoughts_attributes: [
-      {
-        icon: "nerd",
-        text: "I have the talents and abilities to succeed",
-      },
-      {
-        icon: "smile",
-        text: "I will work hard and improve",
-      },
-      {
-        icon: "sunglasses",
-        text: "I see myself reaching my goals",
-      },
-    ],
-    positive_behaviors_attributes: [
-      {
-        icon: "handshake",
-        text: "Ask for help from an adult",
-      },
-      {
-        icon: "thumbsup",
-        text: "Make a plan # (to study, to prepare, to fix something)",
-      },
-      {
-        icon: "hugging",
-        text: "Say I'm sorry",
-      },
-      {
-        icon: "raised_hand",
-        text: "Stop behaviors that keep you from succeeding",
-      },
-      {
-        icon: "grin",
-        text: "Practice positive self-talk"
-      },
-    ]
   )
 end
 
@@ -359,60 +163,6 @@ unless Category.find_by(title: "Attitude")
         icon: "expressionless",
         text: "I just don't want to do anything",
       },
-      {
-        icon: "weary",
-        text: "It's just too hard",
-      },
-      {
-        icon: "disappointed",
-        text: "I'm a failure",
-      },
-      {
-        icon: "confounded",
-        text: "I don't have what it takes to succeed",
-      },
-      {
-        icon: "sweat",
-        text: "No one can help me",
-      },
-    ],
-    feelings_attributes: [
-      {
-        icon: "rage",
-        text: "Angry",
-      },
-      {
-        icon: "worried",
-        text: "Worried",
-      },
-      {
-        icon: "sweat",
-        text: "Anxious",
-      },
-      {
-        icon: "disappointed_relieved",
-        text: "Nervous",
-      },
-      {
-        icon: "disappointed",
-        text: "Sad",
-      },
-      {
-        icon: "fearful",
-        text: "Scared",
-      },
-      {
-        icon: "angry",
-        text: "Mad",
-      },
-      {
-        icon: "slight_smile",
-        text: "Okay",
-      },
-      {
-        icon: "upside_down",
-        text: "Content",
-      },
     ],
     concerns_attributes: [
       {
@@ -427,50 +177,6 @@ unless Category.find_by(title: "Attitude")
         icon: "angry",
         text: "I'll hurt someone I care about",
       },
-      {
-        icon: "writing_hand",
-        text: "I'll skip school",
-      },
-      {
-        icon: "frowning2",
-        text: "I'll do a bad job",
-      },
     ],
-    positive_thoughts_attributes: [
-      {
-        icon: "nerd",
-        text: "I have the talents and abilities to succeed",
-      },
-      {
-        icon: "smile",
-        text: "I will work hard and improve",
-      },
-      {
-        icon: "sunglasses",
-        text: "I see myself reaching my goals",
-      },
-    ],
-    positive_behaviors_attributes: [
-      {
-        icon: "handshake",
-        text: "Ask for help from an adult",
-      },
-      {
-        icon: "thumbsup",
-        text: "Make a plan # (to study, to prepare, to fix something)",
-      },
-      {
-        icon: "hugging",
-        text: "Say I'm sorry",
-      },
-      {
-        icon: "raised_hand",
-        text: "Stop behaviors that keep you from succeeding",
-      },
-      {
-        icon: "grin",
-        text: "Practice positive self-talk"
-      },
-    ]
   )
 end
