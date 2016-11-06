@@ -1,9 +1,12 @@
+# frozen_string_literal: true
 class ActivitiesController < ApplicationController
   before_action do
     headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     headers["Pragma"] = "no-cache"
     headers["Expires"] = "0"
   end
+
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
   end
@@ -13,35 +16,34 @@ class ActivitiesController < ApplicationController
   end
 
   def not_alone
-    session[:category] = params[:category]
-    session[:challenge] = params[:challenge].to_i
+    update_activity(params.permit(:category, :challenge))
   end
 
   def thoughts
-    render locals: { category: category }
+    render locals: { category: activity.category }
   end
 
   def feelings
-    session[:thought] = params[:thought].to_i
-    render locals: { category: category, thought: thought }
+    update_activity(params.permit(:thought))
+    render locals: { category: activity.category, thought: activity.thought }
   end
 
   def concerns
-    session[:feeling] = params[:feeling].to_i
-    render locals: { category: category }
+    update_activity(params.permit(:feeling))
+    render locals: { category: activity.category }
   end
 
   def thanks
-    session[:concern] = params[:concern].to_i
+    update_activity(params.permit(:concern))
   end
 
   def summary
     render locals: {
-      category: category,
-      challenge: challenge,
-      thought: thought,
-      feeling: feeling,
-      concern: concern,
+      category: activity.category,
+      challenge: activity.challenge,
+      thought: activity.thought,
+      feeling: activity.feeling,
+      concern: activity.concern,
     }
   end
 
@@ -49,58 +51,44 @@ class ActivitiesController < ApplicationController
   end
 
   def positive_thoughts
-    render locals: { category: category, thought: thought }
+    render locals: { category: activity.category, thought: activity.thought }
   end
 
   def positive_emotions
-    session[:positive_thought] = params[:positive_thought].to_i
-    render locals: { category: category, feeling: feeling }
+    update_activity(params.permit(:positive_thought))
+    render locals: { category: activity.category, feeling: activity.feeling }
   end
 
   def positive_behaviors
-    render locals: { category: category, concern: concern }
+    render locals: { category: activity.category, concern: activity.concern }
   end
 
   def success_plan
-    session[:positive_behavior] = params[:positive_behavior].to_i
+    update_activity(params.permit(:positive_behavior))
     render locals: {
-      category: category,
-      positive_thought: positive_thought,
-      feeling: feeling,
-      positive_behavior: positive_behavior,
+      category: activity.category,
+      positive_thought: activity.positive_thought,
+      feeling: activity.feeling,
+      positive_behavior: activity.positive_behavior,
     }
   end
 
   def complete
+    update_activity(completed: true)
   end
 
   private
 
-  def category
-    Category.find(session[:category])
+  def update_activity(attrs)
+    activity.assign_attributes(attrs.transform_keys { |k| k.to_s.presence_in(%w(completed id)) || "#{k}_id" })
+    session[:current_activity] = activity
   end
 
-  def challenge
-    category.challenges.find_by(id: session[:challenge])
+  def activity
+    @activity ||= CurrentActivity.new(session[:current_activity].presence || { id: session[:current_activity]})
   end
 
-  def thought
-    category.thoughts.find_by(id: session[:thought])
-  end
-
-  def feeling
-    category.feelings.find_by(id: session[:feeling])
-  end
-
-  def concern
-    category.concerns.find_by(id: session[:concern])
-  end
-
-  def positive_thought
-    category.positive_thoughts.find_by(id: session[:positive_thought])
-  end
-
-  def positive_behavior
-    category.positive_behaviors.find_by(id: session[:positive_behavior])
+  def not_found
+    redirect_to root_path
   end
 end
