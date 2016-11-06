@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   end
 
   get "app_entry_point", to: "home#app_entry_point"
-  get "about", to: "home#about"
+  get "/about", to: "home#about", as: :about
+  get "/help", to: "home#help", as: :help
 end
