@@ -6,7 +6,7 @@
   <ul class="mdl-list">
   <% activities.each do |activity| %>
     <% activity.challenges.each do |challenge| %>
-      <%= render partial: 'emoji_list_item', locals: {activity: activity, entry: challenge, type: 'challenge', link_url: not_alone_activity_path(category: challenge.id, challenge: challenge.id)} %>
+      <%= render partial: 'emoji_list_item', locals: {activity: activity, entry: challenge, type: 'challenge', link_url: not_alone_activity_path(category: activity.id, challenge: challenge.id)} %>
     <% end %>
   <% end %>
   </ul>
