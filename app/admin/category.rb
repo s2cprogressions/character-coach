@@ -26,4 +26,25 @@ ActiveAdmin.register Category do
     end
     f.actions
   end
+
+  show do
+    attributes_table do
+      row :id
+      row :title
+      row :created_at
+      row :updated_at
+    end
+
+    CategoryOption::TYPES.each do |option_type|
+      panel option_type.titleize.pluralize do
+        table_for category.send(option_type.pluralize) do
+          column :text
+          column :description
+          column :icon
+        end
+      end
+    end
+
+    active_admin_comments
+  end
 end
