@@ -3,7 +3,7 @@
   <% category.thoughts.each do |thought| %>
     <li>
       <div class="js-emojione">:<%= thought.icon %>:</div>
-      <%= link_to thought.text, feelings_path(thought: thought.id), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
+      <%= link_to thought.text, feelings_activity_path(thought: thought.id), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
     </li>
   <% end %>
 </ul>
