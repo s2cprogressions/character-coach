@@ -13,7 +13,7 @@ ActiveAdmin.register PageContent do
   end
 
   form do |f|
-    f.inputs f.object.key&.humanize || "New Content" do
+    f.inputs (f.object.key && f.object.key.humanize || "New Content") do
       f.input :type, as: (f.object.required? ? :hidden : :select), collection: %i(string text)
       f.input :key, as: (f.object.required? ? :hidden : :string)
       f.input :text, as: f.object.type
