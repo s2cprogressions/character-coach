@@ -1,5 +1,5 @@
 <% if local_assigns.has_key? :activity %>
-<li class="mdl-list__item" id="activity_<%= activity.id? %>_<%= type %>_<%= entry.id %>">
+<li class="mdl-list__item" id="activity_<%= activity.id.presence %>_<%= type %>_<%= entry.id %>">
 <% else %>
 <li class="mdl-list__item">
 <% end %>
