@@ -6,7 +6,7 @@
     <ul class="demo-list-icon mdl-list">
       <% activities.each do |activity| %>
         <% activity.challenges.each do |challenge| %>
-          <li class="mdl-list__item" id="activity_<%= activity.id %>_challenge_<%= challenge.id %>" onmouseover="addAnimateCSS()">
+          <li class="mdl-list__item" id="activity_<%= activity.id %>_challenge_<%= challenge.id %>">
             <span class="mdl-list__item-primary-content">
               <div class="js-emojione" style="width: 18px;">
                 :<%= challenge.icon %>:
@@ -14,8 +14,7 @@
               <%= challenge.text %>
             </span>
             <%= link_to "Start", not_alone_activity_path(category: activity.id, challenge: challenge.id),
-                        class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent",
-                        :id => "activitiesSubmit" %>
+                        class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent animated-link" %>
           </li>
         <% end %>
       <% end %>
