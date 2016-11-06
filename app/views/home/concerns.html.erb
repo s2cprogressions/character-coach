@@ -1,10 +1,10 @@
 <h3>I'm concerned I might</h3>
 
 <ul class="concerns">
-  <% category.concerns_titles.each_with_index do |concern, index| %>
+  <% category.concerns.each do |concern| %>
     <li>
-      <div class="js-emojione"><%= category.concerns_emojis[index] %></div>
-      <%= link_to concern, thanks_path(concern: index), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
+      <div class="js-emojione">:<%= concern.icon %>:</div>
+      <%= link_to concern.text, thanks_path(concern: concern.id), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
     </li>
   <% end %>
 </ul>

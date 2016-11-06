@@ -82,26 +82,26 @@ class HomeController < ApplicationController
   end
 
   def challenge
-    category.challenges_titles[session[:challenge]]
+    category.challenges.find_by(id: session[:challenge])
   end
 
   def thought
-    category.thinking_titles[session[:thought]]
+    category.thoughts.find_by(id: session[:thought])
   end
 
   def feeling
-    category.feelings_titles[session[:feeling]]
+    category.feelings.find_by(id: session[:feeling])
   end
 
   def concern
-    category.concerns_titles[session[:concern]]
+    category.concerns.find_by(id: session[:concern])
   end
 
   def positive_thought
-    category.positive_thoughts_titles[session[:positive_thought]]
+    category.positive_thoughts.find_by(id: session[:positive_thought])
   end
 
   def positive_behavior
-    category.positive_behaviors_titles[session[:positive_behavior]]
+    category.positive_behaviors.find_by(id: session[:positive_behavior])
   end
 end

@@ -1,9 +1,9 @@
-<h3>Because I'm thinking that <%= thought %>, I'm feeling</h3>
+<h3>Because I'm thinking that <%= thought.text %>, I'm feeling</h3>
 <ul class="feelings">
-  <% category.feelings_titles.each_with_index do |feeling, index| %>
+  <% category.feelings.each do |feeling| %>
     <li>
-      <div class="js-emojione"><%= category.feelings_emojis[index] %></div>
-      <%= link_to feeling, concerns_path(feeling: index), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
+      <div class="js-emojione">:<%= feeling.icon %>:</div>
+      <%= link_to feeling.text, concerns_path(feeling: feeling.id), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
     </li>
   <% end %>
 </ul>

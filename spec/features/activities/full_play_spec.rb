@@ -2,18 +2,18 @@ require "rails_helper"
 
 RSpec.feature "Playing through an activity", :js, type: :feature do
   scenario "User can choose from list of challenges" do
-    load(Rails.root + 'db/seeds.rb')
+    load(Rails.root + "db/seeds.rb")
 
     visit activities_path
 
-    Category.all.flat_map(&:challenges_titles).each do |challenge|
-      expect(page).to have_content challenge
+    CategoryOption.challenges.each do |challenge|
+      expect(page).to have_content challenge.text
     end
 
-    activity = Category.find_by_title("School")
-    challenge = activity.challenges_titles.sample
+    activity = Category.find_by(title: "School")
+    challenge = activity.challenges.sample
 
-    within "#activity_#{activity.id}_challenge_#{activity.challenges_titles.index(challenge)}" do
+    within "#activity_#{activity.id}_challenge_#{challenge.id}" do
       click_link "Start"
     end
 
@@ -23,42 +23,42 @@ RSpec.feature "Playing through an activity", :js, type: :feature do
 
     expect(page).to have_content "I'm thinking that"
 
-    activity.thinking_titles.each do |thought|
-      expect(page).to have_link thought
+    activity.thoughts.each do |thought|
+      expect(page).to have_link thought.text
     end
 
-    thought = activity.thinking_titles.last
+    thought = activity.thoughts.last
 
-    click_link thought
+    click_link thought.text
 
-    expect(page).to have_content "Because I'm thinking that #{thought}, I'm feeling"
+    expect(page).to have_content "Because I'm thinking that #{thought.text}, I'm feeling"
 
-    activity.feelings_titles.each do |feeling|
-      expect(page).to have_link feeling
+    activity.feelings.each do |feeling|
+      expect(page).to have_link feeling.text
     end
 
-    feeling = activity.feelings_titles.sample
-    click_link feeling
+    feeling = activity.feelings.sample
+    click_link feeling.text
 
     expect(page).to have_content "I'm concerned I might"
 
-    activity.concerns_titles.each do |concern|
-      expect(page).to have_link concern
+    activity.concerns.each do |concern|
+      expect(page).to have_link concern.text
     end
 
-    concern = activity.concerns_titles.sample
+    concern = activity.concerns.sample
 
-    click_link concern
+    click_link concern.text
 
     expect(page).to have_content "Okay, thanks for letting us know what is going on."
 
     click_link "Next"
 
     puts page.current_path
-    expect(page).to have_content challenge
-    expect(page).to have_content thought
-    expect(page).to have_content feeling
-    expect(page).to have_content concern
+    expect(page).to have_content challenge.text
+    expect(page).to have_content thought.text
+    expect(page).to have_content feeling.text
+    expect(page).to have_content concern.text
 
     click_link "Next"
 
@@ -66,33 +66,33 @@ RSpec.feature "Playing through an activity", :js, type: :feature do
 
     click_link "Next"
 
-    expect(page).to have_content "Instead of thinking that #{thought}, I will choose to believe that"
+    expect(page).to have_content "Instead of thinking that #{thought.text}, I will choose to believe that"
 
     activity.positive_thoughts.each do |positive_thought|
-      expect(page).to have_link positive_thought
+      expect(page).to have_link positive_thought.text
     end
 
     positive_thought = activity.positive_thoughts.sample
 
-    click_link positive_thought
+    click_link positive_thought.text
 
-    expect(page).to have_content "Instead of feeling bad about feeling #{feeling}, I see that feeling #{feeling} is normal, and I can change the way I feel by taking positive actions."
+    expect(page).to have_content "Instead of feeling bad about feeling #{feeling.text}, I see that feeling #{feeling.text} is normal, and I can change the way I feel by taking positive actions."
 
     click_link "Next"
 
-    expect(page).to have_content "Instead of planning to #{concern}, I have the ability to"
+    expect(page).to have_content "Instead of planning to #{concern.text}, I have the ability to"
 
     activity.positive_behaviors.each do |positive_behavior|
-      expect(page).to have_link positive_behavior
+      expect(page).to have_link positive_behavior.text
     end
 
     positive_behavior = activity.positive_behaviors.sample
 
-    click_link positive_behavior
+    click_link positive_behavior.text
 
-    expect(page).to have_content "I have the ability to #{positive_behavior}"
-    expect(page).to have_content "I will choose to believe that #{positive_thought}"
-    expect(page).to have_content "I see that feeling #{feeling} is normal, but I can change with positive action steps."
+    expect(page).to have_content "I have the ability to #{positive_behavior.text}"
+    expect(page).to have_content "I will choose to believe that #{positive_thought.text}"
+    expect(page).to have_content "I see that feeling #{feeling.text} is normal, but I can change with positive action steps."
 
     click_link "Next"
 

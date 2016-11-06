@@ -6,52 +6,449 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-unless User.find_by_email('admin@progressions.us')
-  User.create!(email: 'admin@progressions.us', password: 'sting-din-daydream', password_confirmation: 'sting-din-daydream')
-end
+User.create_with(
+  password: "sting-din-daydream",
+  password_confirmation: "sting-din-daydream"
+).find_or_create_by!(email: "admin@progressions.us")
 
-
-unless Category.find_by_title("School")
+unless Category.find_by(title: "School")
   Category.create(
-    "title"=>"School",
-    "challenges"=>
-    ":writing_hand: I failed a test\r\n:confused: I'm failing a class\r\n:disappointed_relieved: I'm late to my classes\r\n:persevere: I don't get along with people at school",
-    "thinking"=>
-    ":pensive: I’m not good in this subject\r\n:slight_frown: I’m not good at school work\r\n:weary: There is too much pressure\r\n:weary: It's just too hard\r\n:disappointed: I'm a failure\r\n:confounded: I don't have what it takes to succeed\r\n:sweat: No one can help me",
-    "feelings"=>
-    ":rage: Angry\r\n:worried: Worried\r\n:sweat: Anxious\r\n:disappointed_relieved: Nervous\r\n:disappointed: Sad\r\n:fearful: Scared\r\n:angry: Mad\r\n:slight_smile: Okay\r\n:upside_down: Content",
-    "concerns"=>
-    ":thumbsdown: I’ll fail a class\r\n:fingers_crossed: I'll cheat on a test\r\n:mortar_board: I won't graduate\r\n:writing_hand: I'll skip school\r\n:frowning2: I'll do a bad job",
-    "positive_thoughts"=>
-    ":nerd: I have the talents and abilities to succeed\r\n:smile: I will work hard and improve\r\n:sunglasses: I see myself reaching my goals",
-    "positive_behaviors"=>
-    ":handshake: Ask for help from an adult\r\n:thumbsup: Make a plan # (to study, to prepare, to fix something)\r\n:hugging: Say I'm sorry\r\n:raised_hand: Stop behaviors that keep you from succeeding\r\n:grin: Practice positive self-talk",
+    title: "School",
+    challenges_attributes: [
+      {
+        icon: "writing_hand",
+        text: "I failed a test",
+      },
+      {
+        icon: "confused",
+        text: "I'm failing a class",
+      },
+      {
+        icon: "disappointed_relieved",
+        text: "I'm late to my classes",
+      },
+      {
+        icon: "persevere",
+        text: "I don't get along with people at school",
+      },
+    ],
+    thoughts_attributes: [
+      {
+        icon: "pensive",
+        text: "I’m not good in this subject",
+      },
+      {
+        icon: "slight_frown",
+        text: "I’m not good at school work",
+      },
+      {
+        icon: "weary",
+        text: "There is too much pressure",
+      },
+      {
+        icon: "weary",
+        text: "It's just too hard",
+      },
+      {
+        icon: "disappointed",
+        text: "I'm a failure",
+      },
+      {
+        icon: "confounded",
+        text: "I don't have what it takes to succeed",
+      },
+      {
+        icon: "sweat",
+        text: "No one can help me",
+      },
+    ],
+    feelings_attributes: [
+      {
+        icon: "rage",
+        text: "Angry",
+      },
+      {
+        icon: "worried",
+        text: "Worried",
+      },
+      {
+        icon: "sweat",
+        text: "Anxious",
+      },
+      {
+        icon: "disappointed_relieved",
+        text: "Nervous",
+      },
+      {
+        icon: "disappointed",
+        text: "Sad",
+      },
+      {
+        icon: "fearful",
+        text: "Scared",
+      },
+      {
+        icon: "angry",
+        text: "Mad",
+      },
+      {
+        icon: "slight_smile",
+        text: "Okay",
+      },
+      {
+        icon: "upside_down",
+        text: "Content",
+      },
+    ],
+    concerns_attributes: [
+      {
+        icon: "thumbsdown",
+        text: "I’ll fail a class",
+      },
+      {
+        icon: "fingers_crossed",
+        text: "I'll cheat on a test",
+      },
+      {
+        icon: "mortar_board",
+        text: "I won't graduate",
+      },
+      {
+        icon: "writing_hand",
+        text: "I'll skip school",
+      },
+      {
+        icon: "frowning2",
+        text: "I'll do a bad job",
+      },
+    ],
+    positive_thoughts_attributes: [
+      {
+        icon: "nerd",
+        text: "I have the talents and abilities to succeed",
+      },
+      {
+        icon: "smile",
+        text: "I will work hard and improve",
+      },
+      {
+        icon: "sunglasses",
+        text: "I see myself reaching my goals",
+      },
+    ],
+    positive_behaviors_attributes: [
+      {
+        icon: "handshake",
+        text: "Ask for help from an adult",
+      },
+      {
+        icon: "thumbsup",
+        text: "Make a plan # (to study, to prepare, to fix something)",
+      },
+      {
+        icon: "hugging",
+        text: "Say I'm sorry",
+      },
+      {
+        icon: "raised_hand",
+        text: "Stop behaviors that keep you from succeeding",
+      },
+      {
+        icon: "grin",
+        text: "Practice positive self-talk"
+      },
+    ]
   )
 end
 
-unless Category.find_by_title("Trouble")
+unless Category.find_by(title: "Trouble")
   Category.create(
-    "title"=>"Trouble",
-   "challenges"=>":sweat: I got in trouble\r\n:punch: I got suspended\r\n:triumph: I talked back to my parents\r\n:point_right: I got sent to the office",
-   "thinking"=>
-    ":disappointed: I don't get along with someone important to me\r\n:unamused: I don't want to get along with someone\r\n:zipper_mouth: I can't stop saying things I don't mean\r\n:weary: It's just too hard\r\n:disappointed: I'm a failure\r\n:confounded: I don't have what it takes to succeed\r\n:sweat: No one can help me",
-   "feelings"=>":rage: Angry\r\n:worried: Worried\r\n:sweat: Anxious\r\n:disappointed_relieved: Nervous\r\n:disappointed: Sad\r\n:fearful: Scared\r\n:angry: Mad\r\n:slight_smile: Okay\r\n:upside_down: Content",
-   "concerns"=>":punch: I'll get into a fight\r\n:angry: I'll yell at someone important to me\r\n:weary: I’ll lose my friend\r\n:slight_frown: I'll cheat on a test\r\n:writing_hand: I'll skip school\r\n:frowning2: I'll do a bad job",
-   "positive_thoughts"=>":nerd: I have the talents and abilities to succeed\r\n:smile: I will work hard and improve\r\n:sunglasses: I see myself reaching my goals",
-   "positive_behaviors"=>
-  ":handshake: Ask for help from an adult\r\n:thumbsup: Make a plan # (to study, to prepare, to fix something)\r\n:hugging: Say I'm sorry\r\n:raised_hand: Stop behaviors that keep you from succeeding\r\n:grin: Practice positive self-talk"
-    )
+    title: "Trouble",
+    challenges_attributes: [
+      {
+        icon: "sweat",
+        text: "I got in trouble",
+      },
+      {
+        icon: "punch",
+        text: "I got suspended",
+      },
+      {
+        icon: "triumph",
+        text: "I talked back to my parents",
+      },
+      {
+        icon: "point_right",
+        text: "I got sent to the office",
+      },
+    ],
+    thoughts_attributes: [
+      {
+        icon: "disappointed",
+        text: "I don't get along with someone important to me",
+      },
+      {
+        icon: "unamused",
+        text: "I don't want to get along with someone",
+      },
+      {
+        icon: "zipper_mouth",
+        text: "I can't stop saying things I don't mean",
+      },
+      {
+        icon: "weary",
+        text: "It's just too hard",
+      },
+      {
+        icon: "disappointed",
+        text: "I'm a failure",
+      },
+      {
+        icon: "confounded",
+        text: "I don't have what it takes to succeed",
+      },
+      {
+        icon: "sweat",
+        text: "No one can help me",
+      },
+    ],
+    feelings_attributes: [
+      {
+        icon: "rage",
+        text: "Angry",
+      },
+      {
+        icon: "worried",
+        text: "Worried",
+      },
+      {
+        icon: "sweat",
+        text: "Anxious",
+      },
+      {
+        icon: "disappointed_relieved",
+        text: "Nervous",
+      },
+      {
+        icon: "disappointed",
+        text: "Sad",
+      },
+      {
+        icon: "fearful",
+        text: "Scared",
+      },
+      {
+        icon: "angry",
+        text: "Mad",
+      },
+      {
+        icon: "slight_smile",
+        text: "Okay",
+      },
+      {
+        icon: "upside_down",
+        text: "Content",
+      },
+    ],
+    concerns_attributes: [
+      {
+        icon: "punch",
+        text: "I'll get into a fight",
+      },
+      {
+        icon: "angry",
+        text: "I'll yell at someone important to me",
+      },
+      {
+        icon: "weary",
+        text: "I’ll lose my friend",
+      },
+      {
+        icon: "slight_frown",
+        text: "I'll cheat on a test",
+      },
+      {
+        icon: "writing_hand",
+        text: "I'll skip school",
+      },
+      {
+        icon: "frowning2",
+        text: "I'll do a bad job",
+      },
+    ],
+    positive_thoughts_attributes: [
+      {
+        icon: "nerd",
+        text: "I have the talents and abilities to succeed",
+      },
+      {
+        icon: "smile",
+        text: "I will work hard and improve",
+      },
+      {
+        icon: "sunglasses",
+        text: "I see myself reaching my goals",
+      },
+    ],
+    positive_behaviors_attributes: [
+      {
+        icon: "handshake",
+        text: "Ask for help from an adult",
+      },
+      {
+        icon: "thumbsup",
+        text: "Make a plan # (to study, to prepare, to fix something)",
+      },
+      {
+        icon: "hugging",
+        text: "Say I'm sorry",
+      },
+      {
+        icon: "raised_hand",
+        text: "Stop behaviors that keep you from succeeding",
+      },
+      {
+        icon: "grin",
+        text: "Practice positive self-talk"
+      },
+    ]
+  )
 end
 
-unless Category.find_by_title("Attitude")
+unless Category.find_by(title: "Attitude")
   Category.create(
-  "title"=>"Attitude",
-  "challenges"=>":angry: I have a bad attitude\r\n:zipper_mouth: I cannot control my emotions\r\n:pensive: I'm letting things bring me down",
-  "thinking"=>":expressionless: I just don't want to do anything\r\n:weary: It's just too hard\r\n:disappointed: I'm a failure\r\n:confounded: I don't have what it takes to succeed\r\n:sweat: No one can help me",
-  "feelings"=>":rage: Angry\r\n:worried: Worried\r\n:sweat: Anxious\r\n:disappointed_relieved: Nervous\r\n:disappointed: Sad\r\n:fearful: Scared\r\n:angry: Mad\r\n:slight_smile: Okay\r\n:upside_down: Content",
-  "concerns"=>":triumph: I'll yell at someone important to me\r\n:weary: I’ll lose my friend\r\n:angry: I'll hurt someone I care about\r\n:writing_hand: I'll skip school\r\n:frowning2: I'll do a bad job",
-  "positive_thoughts"=>":nerd: I have the talents and abilities to succeed\r\n:smile: I will work hard and improve\r\n:sunglasses: I see myself reaching my goals",
-  "positive_behaviors"=>
-  ":handshake: Ask for help from an adult\r\n:thumbsup: Make a plan # (to study, to prepare, to fix something)\r\n:hugging: Say I'm sorry\r\n:raised_hand: Stop behaviors that keep you from succeeding\r\n:grin: Practice positive self-talk"
-    )
+    title: "Attitude",
+    challenges_attributes: [
+      {
+        icon: "angry",
+        text: "I have a bad attitude",
+      },
+      {
+        icon: "zipper_mouth",
+        text: "I cannot control my emotions",
+      },
+      {
+        icon: "pensive",
+        text: "I'm letting things bring me down",
+      },
+    ],
+    thoughts_attributes: [
+      {
+        icon: "expressionless",
+        text: "I just don't want to do anything",
+      },
+      {
+        icon: "weary",
+        text: "It's just too hard",
+      },
+      {
+        icon: "disappointed",
+        text: "I'm a failure",
+      },
+      {
+        icon: "confounded",
+        text: "I don't have what it takes to succeed",
+      },
+      {
+        icon: "sweat",
+        text: "No one can help me",
+      },
+    ],
+    feelings_attributes: [
+      {
+        icon: "rage",
+        text: "Angry",
+      },
+      {
+        icon: "worried",
+        text: "Worried",
+      },
+      {
+        icon: "sweat",
+        text: "Anxious",
+      },
+      {
+        icon: "disappointed_relieved",
+        text: "Nervous",
+      },
+      {
+        icon: "disappointed",
+        text: "Sad",
+      },
+      {
+        icon: "fearful",
+        text: "Scared",
+      },
+      {
+        icon: "angry",
+        text: "Mad",
+      },
+      {
+        icon: "slight_smile",
+        text: "Okay",
+      },
+      {
+        icon: "upside_down",
+        text: "Content",
+      },
+    ],
+    concerns_attributes: [
+      {
+        icon: "triumph",
+        text: "I'll yell at someone important to me",
+      },
+      {
+        icon: "weary",
+        text: "I’ll lose my friend",
+      },
+      {
+        icon: "angry",
+        text: "I'll hurt someone I care about",
+      },
+      {
+        icon: "writing_hand",
+        text: "I'll skip school",
+      },
+      {
+        icon: "frowning2",
+        text: "I'll do a bad job",
+      },
+    ],
+    positive_thoughts_attributes: [
+      {
+        icon: "nerd",
+        text: "I have the talents and abilities to succeed",
+      },
+      {
+        icon: "smile",
+        text: "I will work hard and improve",
+      },
+      {
+        icon: "sunglasses",
+        text: "I see myself reaching my goals",
+      },
+    ],
+    positive_behaviors_attributes: [
+      {
+        icon: "handshake",
+        text: "Ask for help from an adult",
+      },
+      {
+        icon: "thumbsup",
+        text: "Make a plan # (to study, to prepare, to fix something)",
+      },
+      {
+        icon: "hugging",
+        text: "Say I'm sorry",
+      },
+      {
+        icon: "raised_hand",
+        text: "Stop behaviors that keep you from succeeding",
+      },
+      {
+        icon: "grin",
+        text: "Practice positive self-talk"
+      },
+    ]
+  )
 end
