@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "Playing through an activity", :js, type: :feature do
   scenario "User can choose from list of challenges" do
-    load(Rails.root + 'db/seeds.rb')
+    load(Rails.root + "db/seeds.rb")
 
     visit activities_path
 
@@ -10,7 +10,7 @@ RSpec.feature "Playing through an activity", :js, type: :feature do
       expect(page).to have_content challenge
     end
 
-    activity = Category.find_by_title("School")
+    activity = Category.find_by(title: "School")
     challenge = activity.challenges_titles.sample
 
     within "#activity_#{activity.id}_challenge_#{activity.challenges_titles.index(challenge)}" do
