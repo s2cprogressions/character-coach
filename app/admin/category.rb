@@ -16,11 +16,13 @@ ActiveAdmin.register Category do
       f.inputs do
         f.has_many option_type.pluralize,
                    heading: option_type.titleize.pluralize,
+                   sortable: :index,
+                   sortable_start: 1,
                    allow_destroy: true,
                    new_record: true do |a|
-          a.input :icon
           a.input :text
           a.input :description
+          a.input :icon
         end
       end
     end
