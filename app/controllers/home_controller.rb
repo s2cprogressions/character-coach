@@ -11,6 +11,10 @@ class HomeController < ApplicationController
   end
 
   def help
+    render locals: {
+      emergency_contact_number: "18885555555",
+      general_disclaimer: "Hi",
+    }
   end
 
   def keys_to_success
