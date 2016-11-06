@@ -1,7 +1,8 @@
+# frozen_string_literal: true
 ActiveAdmin.register PageContent do
   permit_params :key, :text, :type
 
-  sidebar :required do
+  sidebar :required, if: proc { PageContent.missing_content.present? } do
     ul do
       PageContent.missing_content.each do |key, type|
         li do
