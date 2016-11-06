@@ -1,10 +1,11 @@
-<h3>Instead of thinking that <%= thought.text %>, I will choose to believe that</h3>
+<div class="content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
 
-<ul class="positive_thinking">
+<h4>Instead of thinking that <%= thought.text %>, I will choose to believe that</h4>
+
+<ul class="positive_thinking mdl-list">
   <% category.positive_thoughts.each do |positive_thought| %>
-    <li>
-      <div class="js-emojione">:<%= positive_thought.icon %>:</div>
-      <%= link_to positive_thought.text, positive_emotions_activity_path(positive_thought: positive_thought.id), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
-    </li>
+    <%= render partial: 'emoji_list_item', locals: {entry: positive_thought, type: 'positive_thought', link_url: positive_emotions_activity_path(positive_thought: positive_thought.id)} %>
   <% end %>
 </ul>
+
+</div>

@@ -1,6 +1,18 @@
-<div class="challenge"><%= challenge.text %></div>
-<div class="concern"><%= concern.text %></div>
-<div class="thought"><%= thought.text %></div>
-<div class="feeling"><%= feeling.text %></div>
+<div id="challenges" class="content mdl-color-text--grey-800 mdl-cell mdl-cell--2-col"></div>
+<div id="challenges" class="content mdl-color-text--grey-800 mdl-cell mdl-cell--4-col">
 
-<%= link_to "Next", let_me_help_activity_path %>
+  <h4>You said:</h4>
+
+  <div class="challenge"><%= challenge.text %></div>
+
+  <h5 class="big-margin">And you are concerned that:</h5>
+  <div class="concern"><%= concern.text %></div>
+
+  <h5 class="big-margin">This makes you think:</h5>
+  <div class="thought"><%= thought.text %></div>
+
+  <h5 class="big-margin">And you feel:</h5>
+  <div class="feeling"><%= feeling.text %></div>
+
+  <%= link_to "Next", let_me_help_activity_path, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
+</div>

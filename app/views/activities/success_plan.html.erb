@@ -1,5 +1,15 @@
-<h3>I have the ability to <%= positive_behavior.text %>.</h3>
-<h3>I will choose to believe that <%= positive_thought.text %>.</h3>
-<h3>I see that feeling <%= feeling.text %> is normal, but I can change with positive action steps.</h3>
+<div id="not-alone" class="mdl-cell mdl-cell--8-col centered-info">
+  <h4>Success Plan</h4>
 
-<%= link_to "Next", complete_activity_path %>
+  <div class="js-emojione">
+    :muscle:
+  </div>
+
+  <p>I have the ability to <%= positive_behavior.text %>.</p>
+  <p>I will choose to believe that <%= positive_thought.text %>.</p>
+  <p>I see that feeling <%= feeling.text %> is normal, but I can change with positive action steps.</p>
+
+  <%= link_to "Next", complete_activity_path,
+    class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent",
+    :id => "activitiesSubmit" %>
+</div>

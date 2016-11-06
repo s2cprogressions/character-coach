@@ -3,9 +3,11 @@
 
   <p>Select the challenge below that best describes what you would like help with:</p>
 
+  <ul class="mdl-list">
   <% activities.each do |activity| %>
     <% activity.challenges.each do |challenge| %>
       <%= render partial: 'emoji_list_item', locals: {activity: activity, entry: challenge, type: 'challenge', link_url: not_alone_activity_path(category: challenge.id, challenge: challenge.id)} %>
     <% end %>
   <% end %>
+  </ul>
 </div>

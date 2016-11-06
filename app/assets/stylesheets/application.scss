@@ -33,6 +33,7 @@ a.animated-link {
   background-color: #CEC5C5;
   text-decoration: none;
   padding: 10px;
+  width: 100%;
 
   &.selected {
     background-color: #E7707e;
@@ -43,5 +44,11 @@ a.animated-link {
 
 h4 {
   font-weight: 700;
+
+}
+
+
+.big-margin {
+  margin-top: 40px;
 
 }

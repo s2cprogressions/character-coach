@@ -1,10 +1,9 @@
-<h3>Instead of planning to <%= concern.text %>, I have the ability to</h3>
+<div class="content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
 
-<ul class="positive_behaviors">
+<h4>Instead of planning to <%= concern.text %>, I have the ability to</h4>
+
+<div class="positive_behaviors">
   <% category.positive_behaviors.each do |positive_behavior| %>
-    <li>
-      <div class="js-emojione">:<%= positive_behavior.icon %>:</div>
-      <%= link_to positive_behavior.text, success_plan_activity_path(positive_behavior: positive_behavior.id), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
-    </li>
+    <%= render partial: 'emoji_list_item', locals: {entry: positive_behavior, type: 'positive_thought', link_url:success_plan_activity_path(positive_behavior: positive_behavior.id) } %>
   <% end %>
-</ul>
+</div>

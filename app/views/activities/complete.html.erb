@@ -1,4 +1,12 @@
-<h3>Awesome! You did it!</h3>
-<div>Now do what you just planned to do, and keep on trying. Don't give up and in time you will succeed.</div>
+<div id="not-alone" class="mdl-cell mdl-cell--8-col centered-info">
 
-<%= link_to "Finish", root_path %>
+  <h4>Awesome! You did it!</h4>
+  <div class="js-emojione">
+    :medal:
+  </div>
+  <div>Now do what you just planned to do, and keep on trying. Don't give up and in time you will succeed.</div>
+
+  <%= link_to "Finish", root_path,
+    class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent",
+    :id => "activitiesSubmit" %>
+</div>
