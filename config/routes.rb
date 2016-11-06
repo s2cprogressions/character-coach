@@ -25,4 +25,5 @@ Rails.application.routes.draw do
   get "app_entry_point", to: "home#app_entry_point"
   get "/about", to: "home#about", as: :about
   get "/help", to: "home#help", as: :help
+  get "/keys_to_success", to: "home#keys_to_success", as: :keys_to_success
 end
