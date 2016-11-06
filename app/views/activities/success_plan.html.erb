@@ -9,7 +9,5 @@
   <p>I will choose to believe that <%= positive_thought.text %>.</p>
   <p>I see that feeling <%= feeling.text %> is normal, but I can change with positive action steps.</p>
 
-  <%= link_to "Next", complete_activity_path,
-    class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent",
-    :id => "activitiesSubmit" %>
+  <%= next_button "Next", complete_activity_path %>
 </div>

@@ -1,3 +1,4 @@
+@import 'home';
 @import 'about';
 @import 'activities';
 @import "animate";
@@ -44,6 +45,14 @@ a.animated-link {
 
 h4 {
   font-weight: 700;
+}
+
+h4, h5 {
+  padding: 0 10px;
+}
+
+p {
+  padding: 0 10px;
 
 }
 

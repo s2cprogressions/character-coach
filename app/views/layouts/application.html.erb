@@ -22,26 +22,18 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header id="app-header" class="mdl-layout__header">
         <div class="mdl-layout__header-row">
+          <nav class="mdl-navigation">
+            <%= link_to root_path, :class=>"mdl-navigation__link" do %>
+              <%= image_tag "homeIcon.svg" %>
+            <% end %>
+          </nav>
           <!-- Title -->
           <span class="mdl-layout-title"><%= page_title %></span>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation. We hide it in small screens. -->
-          <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <%= link_to "Home", root_path, :class=>"mdl-navigation__link" %>
-            <%= link_to "About", about_path, :class=>"mdl-navigation__link" %>
-            <%= link_to "Help", help_path, :class=>"mdl-navigation__link" %>
-          </nav>
         </div>
       </header>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Character Coach</span>
-        <nav class="mdl-navigation">
-          <%= link_to "Home", root_path, :class=>"mdl-navigation__link" %>
-          <%= link_to "About", about_path, :class=>"mdl-navigation__link" %>
-          <%= link_to "Help", help_path, :class=>"mdl-navigation__link" %>
-        </nav>
-      </div>
       <main class="mdl-layout__content">
         <div class="section--center mdl-grid mdl-grid--no-spacing">
           <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>

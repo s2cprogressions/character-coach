@@ -1,16 +1,16 @@
-<div class="mdl-cell mdl-cell--8-col">
-  <h1>
+<div class="mdl-cell mdl-cell--8-col centered-info">
+  <h1 class="main-title">
     Character Coach
   </h1>
 
-  <p>
-    <%= link_to "Get Started", challenges_activity_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %></h1>
+  <%= image_tag 'strong-character.png', class: 'home-logo' %>
+
+  <p class="big-margin">
+    <%= link_to "Get Started", challenges_activity_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", id: "get-started" %></h1>
   </p>
 
 
-  <ul>
-    <li> <%= link_to "About", about_path %></li>
-    <li><%= link_to "Help", help_path %></li>
-    <li><%= link_to "Keys to Success", keys_to_success_path %></li>
-  </ul>
+  <p class="big-margin"> <%= link_to "About", about_path %></p>
+  <p><%= link_to "Help", help_path %></p>
+  <p><%= link_to "Keys to Success", keys_to_success_path %></p>
 </div>
