@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
   def index
-    session.clear
   end
 
   def app_entry_point
