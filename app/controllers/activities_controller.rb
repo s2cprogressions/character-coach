@@ -1,4 +1,10 @@
 class ActivitiesController < ApplicationController
+  before_action do
+    headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    headers["Pragma"] = "no-cache"
+    headers["Expires"] = "0"
+  end
+
   def index
   end
 
