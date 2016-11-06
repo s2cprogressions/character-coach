@@ -11,4 +11,8 @@ class CategoryOption < ApplicationRecord
   self.inheritance_column = nil
 
   belongs_to :category
+
+  TYPES.each do |type|
+    scope type.pluralize.to_sym, -> { where(type: type) }
+  end
 end

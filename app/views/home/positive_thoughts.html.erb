@@ -1,10 +1,10 @@
-<h3>Instead of thinking that <%= thought %>, I will choose to believe that</h3>
+<h3>Instead of thinking that <%= thought.text %>, I will choose to believe that</h3>
 
 <ul class="positive_thinking">
-  <% category.positive_thoughts_titles.each_with_index do |positive_thought, index| %>
+  <% category.positive_thoughts.each do |positive_thought| %>
     <li>
-      <div class="js-emojione"><%= category.positive_thoughts_emojis[index] %></div>
-      <%= link_to positive_thought, positive_emotions_path(positive_thought: index), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
+      <div class="js-emojione">:<%= positive_thought.icon %>:</div>
+      <%= link_to positive_thought.text, positive_emotions_path(positive_thought: positive_thought.id), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
     </li>
   <% end %>
 </ul>

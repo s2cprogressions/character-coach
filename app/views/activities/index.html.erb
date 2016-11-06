@@ -5,15 +5,15 @@
     Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.
     <ul class="demo-list-icon mdl-list">
       <% activities.each do |activity| %>
-        <% activity.challenges_titles.each_with_index do |challenge, index| %>
-          <li class="mdl-list__item" id="activity_<%= activity.id %>_challenge_<%= index %>" onmouseover="addAnimateCSS()">
+        <% activity.challenges.each do |challenge| %>
+          <li class="mdl-list__item" id="activity_<%= activity.id %>_challenge_<%= challenge.id %>" onmouseover="addAnimateCSS()">
             <span class="mdl-list__item-primary-content">
               <div class="js-emojione" style="width: 18px;">
-                <%= activity.challenges_emojis[index] %>
+                :<%= challenge.icon %>:
               </div>
-              <%= challenge %>
+              <%= challenge.text %>
             </span>
-            <%= link_to "Start", not_alone_path(category: activity.id, challenge: index),
+            <%= link_to "Start", not_alone_path(category: activity.id, challenge: challenge.id),
                         class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent",
                         :id => "activitiesSubmit" %>
           </li>
