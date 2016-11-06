@@ -1,8 +1,24 @@
+<h1>Character Coach</h1>
+
+<div class="logo">
+<%= image_tag "strong-character.png", alt: "Character Coach Logo" %>
+</div>
+
 <div class="mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
   <div class="mdl-card__supporting-text">
-    <h4>Help</h4>
-    <p>
-    Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.
-    </p>
+    <h4>If you are in need of emergency assistance, please call:</h4>
+    <div class="emergency-contact-number">
+      <a href="tel:<%= emergency_contact_number %>" class="phone_number">
+        <%= number_to_phone emergency_contact_number, area_code: true %>
+      </a>
+    </div>
+    <div class="availability">
+      24/6/365 Crisis Call Center Hotline
+    </div>
   </div>
+</div>
+
+<h3>General Disclaimer</h3>
+<div class="disclaimer">
+  <%= simple_format general_disclaimer %>
 </div>
