@@ -1,82 +1,133 @@
 globals:
   feelings:
-    - Angry
-    - Worried
-    - Anxious
-    - Nervous
-    - Sad
-    - Scared
-    - Mad
-    - Okay
-    - Content
+    - text: Angry
+      icon: rage
+    - text: Worried
+      icon: worried
+    - text: Anxious
+      icon: sweat
+    - text: Nervous
+      icon: disappointed_relieved
+    - text: Sad
+      icon: disappointed
+    - text: Scared
+      icon: fearful
+    - text: Mad
+      icon: angry
+    - text: Okay
+      icon: slight_smile
+    - text: Content
+      icon: upside_down
   thoughts:
-    - It's just too hard
-    - I'm a failure
-    - I don't have what it takes to succeed
-    - No one can help me
+    - text: It's just too hard
+      icon: weary
+    - text: I'm a failure
+      icon: disappointed
+    - text: I don't have what it takes to succeed
+      icon: confounded
+    - text: No one can help me
+      icon: sweat
   concerns:
-    - I'll skip school
-    - I'll do a bad job
+    - text: I'll skip school
+      icon: writing_hand
+    - text: I'll do a bad job
+      icon: frowning2
   positive_thoughts:
-    - I have the talents and abilities to succeed
-    - I will work hard and improve
-    - I see myself reaching my goals
+    - text: I have the talents and abilities to succeed
+      icon: nerd
+    - text: I will work hard and improve
+      icon: smile
+    - text: I see myself reaching my goals
+      icon: sunglasses
   positive_behaviors:
-    - Ask for help from an adult
-    - Make a plan # (to study, to prepare, to fix something)
-    - Say I'm sorry
-    - Stop behaviors that keep you from succeeding
-    - Practice positive self-talk
+    - text: Ask for help from an adult
+      icon: handshake
+    - text: Make a plan # (to study, to prepare, to fix something)
+      icon: thumbsup
+    - text: Say I'm sorry
+      icon: hugging
+    - text: Stop behaviors that keep you from succeeding
+      icon: raised_hand
+    - text: Practice positive self-talk
+      icon: grin
 categories:
   school:
     title: School
     challenges:
-      - I failed a test
-      - I'm failing a class
-      - I'm late to my classes
-      - I don't get along with people at school
+      - text: I failed a test
+        icon: writing_hand
+      - text: I'm failing a class
+        icon: confused
+      - text: I'm late to my classes
+        icon: disappointed_relieved
+      - text: I don't get along with people at school
+        icon: persevere
     thoughts:
-      - I'm not good in this subject
-      - I'm not good at school work
-      - There is too much pressure
+      - text: I'm not good in this subject
+        icon: pensive
+      - text: I'm not good at school work
+        icon: slight_frown
+      - text: There is too much pressure
+        icon: weary
     feelings: []
     concerns:
-      - I'll fail a class
-      - I'll cheat on a test
-      - I won't graduate
+      - text: I'll fail a class
+        icon: thumbsdown
+      - text: I'll cheat on a test
+        icon: fingers_crossed
+      - text: I won't graduate
+        icon: mortar_board
     positive_thoughts: []
     positive_behaviors: []
   trouble:
     title: Trouble
     challenges:
-      - I got in trouble
-      - I got suspended
-      - I talked back to my parents
-      - I got sent to the office
+      - text: I got in trouble
+        icon: sweat
+      - text: I got suspended
+        icon: punch
+      - text: I talked back to my parents
+        icon: triumph
+      - text: I got sent to the office
+        icon: point_right
     thoughts:
-      - I don't get along with someone important to me
-      - I don't want to get along with someone
-      - I can't stop saying things I don't mean
+      - text: I don't get along with someone important to me
+        icon: disappointed
+      - text: I don't want to get along with someone
+        icon: unamused
+      - text: I can't stop saying things I don't mean
+        icon: zipper_mouth
     feelings: []
     concerns:
-      - I'll get into a fight
-      - I'll yell at someone important to me
-      - I'll lose my friend
-      - I'll cheat on a test
+      - text: I'll get into a fight
+        icon: punch
+      - text: I'll yell at someone important to me
+        icon: angry
+      - text: I'll lose my friend
+        icon: weary
+      - text: I'll cheat on a test
+        icon: slight_frown
     positive_thoughts: []
     positive_behaviors: []
   attitude:
     title: Attitude
     challenges:
-      - I have a bad attitude
-      - I cannot control my emotions
-      - I'm letting things bring me down
+      - text: I have a bad attitude
+        icon: angry
+      - text: I cannot control my emotions
+        icon: zipper_mouth
+      - text: I'm letting things bring me down
+        icon: pensive
     thoughts:
-      - I just don't want to do anything
+      - text: I just don't want to do anything
+        icon: expressionless
     feelings: []
     concerns:
-      - I'll yell at someone important to me
-      - I'll lose my friend
-      - I'll hurt someone I care about
+      - text: I'll yell at someone important to me
+        icon: triumph
+      - text: I'll lose my friend
+        icon: weary
+      - text: I'll hurt someone I care about
+        icon: angry
     positive_thoughts: []
     positive_behaviors: []

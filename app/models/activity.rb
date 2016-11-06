@@ -18,6 +18,14 @@ class Activity
         category["id"] = id
         category[key] += value
       end
+      ActivityOption::TYPES.each do |option_type|
+        category[option_type.pluralize] = category[option_type.pluralize].map do |value_attrs|
+          identifiers = [category["id"], option_type, value_attrs["text"]].join(":")
+          value_attrs["id"] = Digest::MD5.hexdigest(identifiers)
+          value_attrs["type"] = option_type
+          ActivityOption.new(value_attrs)
+        end
+      end
       category
     end
   end
