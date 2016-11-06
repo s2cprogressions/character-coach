@@ -1,10 +1,10 @@
-<h3>I'm concerned I might</h3>
-
-<ul class="concerns">
-  <% category.concerns.each do |concern| %>
-    <li>
-      <div class="js-emojione">:<%= concern.icon %>:</div>
-      <%= link_to concern.text, thanks_activity_path(concern: concern.id), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
-    </li>
-  <% end %>
-</ul>
+<div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+  <div class="mdl-card__supporting-text">
+    <h4>I'm concerned I might</h4>
+    <ul class="concerns">
+      <% category.concerns.each do |concern| %>
+          <%= render partial: 'emoji_list_item', locals: {entry: concern, type: 'concern', link_url: thanks_activity_path(concern: concern.id)} %>
+      <% end %>
+    </ul>
+  </div>
+</div>
