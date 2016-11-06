@@ -6,7 +6,7 @@
     <ul class="demo-list-icon mdl-list">
       <% activities.each do |activity| %>
         <% activity.challenges_titles.each_with_index do |challenge, index| %>
-          <li class="mdl-list__item">
+          <li class="mdl-list__item" id="activity_<%= activity.id %>_challenge_<%= index %>">
             <span class="mdl-list__item-primary-content">
               <div class="js-emojione" style="width: 18px;">
                 <%= activity.challenges_emojis[index] %>

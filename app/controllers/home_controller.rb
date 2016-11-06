@@ -82,7 +82,7 @@ class HomeController < ApplicationController
   end
 
   def challenge
-    category.challenges[session[:challenge]]
+    category.challenges_titles[session[:challenge]]
   end
 
   def thought

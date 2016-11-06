@@ -2,16 +2,18 @@ require "rails_helper"
 
 RSpec.feature "Playing through an activity", :js, type: :feature do
   scenario "User can choose from list of challenges" do
+    load(Rails.root + 'db/seeds.rb')
+
     visit activities_path
 
-    Activity.activities.flat_map(&:challenges).each do |challenge|
+    Category.all.flat_map(&:challenges_titles).each do |challenge|
       expect(page).to have_content challenge
     end
 
-    activity = Activity.activity(:school)
-    challenge = activity.challenges.sample
+    activity = Category.find_by_title("School")
+    challenge = activity.challenges_titles.sample
 
-    within "#activity_#{activity.id}_challenge_#{activity.challenges.index(challenge)}" do
+    within "#activity_#{activity.id}_challenge_#{activity.challenges_titles.index(challenge)}" do
       click_link "Start"
     end
 
@@ -21,30 +23,30 @@ RSpec.feature "Playing through an activity", :js, type: :feature do
 
     expect(page).to have_content "I'm thinking that"
 
-    activity.thoughts.each do |thought|
+    activity.thinking_titles.each do |thought|
       expect(page).to have_link thought
     end
 
-    thought = activity.thoughts.last
+    thought = activity.thinking_titles.last
 
     click_link thought
 
     expect(page).to have_content "Because I'm thinking that #{thought}, I'm feeling"
 
-    activity.feelings.each do |feeling|
+    activity.feelings_titles.each do |feeling|
       expect(page).to have_link feeling
     end
 
-    feeling = activity.feelings.sample
+    feeling = activity.feelings_titles.sample
     click_link feeling
 
     expect(page).to have_content "I'm concerned I might"
 
-    activity.concerns.each do |concern|
+    activity.concerns_titles.each do |concern|
       expect(page).to have_link concern
     end
 
-    concern = activity.concerns.sample
+    concern = activity.concerns_titles.sample
 
     click_link concern
 
@@ -52,6 +54,7 @@ RSpec.feature "Playing through an activity", :js, type: :feature do
 
     click_link "Next"
 
+    puts page.current_path
     expect(page).to have_content challenge
     expect(page).to have_content thought
     expect(page).to have_content feeling
